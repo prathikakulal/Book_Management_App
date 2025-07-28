@@ -1,6 +1,6 @@
-// backend/tests/book.test.js
+
 const request = require('supertest');
-const app = require('../server'); // Assuming your server.js exports the app
+const app = require('../server'); 
 const path = require('path');
 
 describe('POST /api/books', () => {
@@ -9,7 +9,7 @@ describe('POST /api/books', () => {
       .post('/api/books')
       .field('title', 'Test Book')
       .field('author', 'Test Author')
-      .attach('coverImage', path.resolve(__dirname, 'test-image.png')); // Have a test image in this folder
+      .attach('coverImage', path.resolve(__dirname, 'test-image.png')); 
 
     expect(res.statusCode).toEqual(201);
     expect(res.body).toHaveProperty('title', 'Test Book');
@@ -22,7 +22,7 @@ describe('POST /api/books', () => {
       .post('/api/books')
       .field('title', 'Another Book')
       .field('author', 'Test Author')
-      .attach('coverImage', path.resolve(__dirname, 'test-file.txt')); // Attach a non-image file
+      .attach('coverImage', path.resolve(__dirname, 'test-file.txt')); 
 
     expect(res.statusCode).toEqual(500);
     expect(res.body.message).toContain('File upload only supports');

@@ -1,4 +1,4 @@
-// backend/models/Book.js
+
 const mongoose = require('mongoose');
 
 const bookSchema = new mongoose.Schema({
@@ -11,7 +11,7 @@ const bookSchema = new mongoose.Schema({
     required: true,
   },
   coverImage: {
-    type: String, // This will store the URL of the image from Cloudinary
+    type: String,
     required: false,
   },
 }, { timestamps: true });

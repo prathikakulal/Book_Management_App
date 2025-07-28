@@ -1,9 +1,9 @@
-// backend/middleware/uploadMiddleware.js
+
 const multer = require('multer');
 const path = require('path');
 
-// Configure multer storage
-const storage = multer.diskStorage({}); // Use memory storage or temporary disk storage
+
+const storage = multer.diskStorage({}); 
 
 const fileFilter = (req, file, cb) => {
   const allowedFileTypes = /jpeg|jpg|png/;
@@ -18,7 +18,7 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({
   storage: storage,
-  limits: { fileSize: 2 * 1024 * 1024 }, // 2MB file size limit
+  limits: { fileSize: 2 * 1024 * 1024 }, 
   fileFilter: fileFilter,
 });
 
